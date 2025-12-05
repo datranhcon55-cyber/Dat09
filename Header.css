@@ -1,0 +1,130 @@
+/* ================= HEADER STYLES ================= */
+
+/* Header chính */
+header {
+    position: sticky; /* Giữ header cố định khi cuộn trang */
+    top: 0; /* Dính vào mép trên */
+    width: 100%; /* Chiếm toàn bộ chiều ngang */
+    background-color: rgba(25, 25, 100, 1); /* Màu nền header (xanh đậm) */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ phía dưới */
+    z-index: 100; /* Đảm bảo header nằm trên các phần tử khác */
+}
+
+/* Container bên trong header */
+header .container {
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa container */
+    padding: 0 20px; /* Padding trái và phải */
+}
+
+/* Nội dung header: logo + nav + nút */
+header .header-content {
+    display: flex; /* Sử dụng flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: space-between; /* Khoảng cách đều giữa các phần tử */
+    height: 64px; /* Chiều cao header */
+}
+
+/* ================= LOGO ================= */
+
+/* Khối logo */
+header .logo {
+    display: flex; /* Flex để sắp xếp icon và text */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa icon và chữ */
+}
+
+/* Icon logo (hình tròn) */
+header .logo-icon {
+    width: 40px; /* Chiều rộng */
+    height: 40px; /* Chiều cao */
+    background-color: #ffd700; /* Màu vàng */
+    border-radius: 50%; /* Bo tròn 100% */
+    display: flex; /* Flex để căn giữa SVG */
+    align-items: center; /* Căn giữa theo dọc */
+    justify-content: center; /* Căn giữa theo ngang */
+}
+
+/* Kích thước và màu SVG trong logo */
+header .logo-icon svg {
+    width: 24px; /* Chiều ngang SVG */
+    height: 24px; /* Chiều cao SVG */
+    color: #1b3764; /* Màu SVG */
+}
+
+/* Chữ logo */
+header .logo-text {
+    font-weight: bold; /* Chữ đậm */
+    font-size: 20px; /* Cỡ chữ */
+    color: white; /* Màu chữ */
+    letter-spacing: 1px; /* Khoảng cách giữa các chữ */
+}
+
+/* ================= NAVIGATION ================= */
+
+/* Ẩn menu mặc định trên mobile */
+header nav {
+    display: none;
+}
+
+/* Menu khi bật class show (nếu dùng JS bật/tắt) */
+header nav.show {
+    display: flex; /* Hiển thị flex */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 30px; /* Khoảng cách giữa các link */
+}
+
+/* Hiển thị menu trên màn hình >= 768px */
+@media (min-width: 768px) {
+    header nav {
+        display: flex; /* Flexbox hiển thị link */
+        align-items: center; /* Căn giữa theo dọc */
+        gap: 30px; /* Khoảng cách giữa các link */
+    }
+}
+
+/* Link trong menu */
+header nav a {
+    color: white; /* Màu chữ trắng */
+    text-decoration: none; /* Không gạch chân */
+    font-weight: 500; /* Chữ vừa */
+    letter-spacing: 1px; /* Khoảng cách giữa chữ */
+    padding: 8px 0; /* Padding trên/dưới */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt khi hover */
+    font-size: 14px; /* Cỡ chữ link */
+}
+
+/* Hover đổi màu link */
+header nav a:hover {
+    color: #ffd700; /* Màu vàng khi hover */
+}
+
+/* ================= APPLY BUTTON ================= */
+
+/* Nút Apply mặc định ẩn trên mobile */
+header .apply-btn {
+    display: none; /* Ẩn */
+    background-color: #ffd700; /* Nền vàng */
+    color: #1b3764; /* Chữ xanh đậm */
+    padding: 10px 24px; /* Padding trong nút */
+    border-radius: 4px; /* Bo góc nhẹ */
+    font-weight: bold; /* Chữ đậm */
+    letter-spacing: 1px; /* Khoảng cách giữa chữ */
+    border: none; /* Không viền */
+    cursor: pointer; /* Con trỏ chuột */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Hiệu ứng hover */
+    font-size: 14px; /* Cỡ chữ */
+}
+
+/* Hiển thị nút trên màn hình >= 768px */
+@media (min-width: 768px) {
+    header .apply-btn {
+        display: inline-block; /* Hiển thị */
+    }
+}
+
+/* Hover nút Apply */
+header .apply-btn:hover {
+    background-color: #ffed4e; /* Nền vàng sáng hơn */
+    transform: scale(1.05); /* Phóng to nhẹ */
+}

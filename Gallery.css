@@ -1,0 +1,254 @@
+
+/* 1. GALLERY PAGE STYLES               */
+/* Container chính của toàn bộ trang Gallery */
+.gallery-container {
+  min-height: 100vh;
+  /* ⭐ ĐÃ SỬA: Chuyển thành nền trắng tinh ⭐ */
+  background: #ffffff; 
+  padding: 4rem 1rem;
+}
+
+/* ⭐⭐ ĐÃ SỬA NỀN TRẮNG Ở ĐÂY (Xóa bỏ xanh nhạt) ⭐⭐ */
+/* Dark mode: Nếu bạn muốn dark mode này cũng là nền trắng */
+.gallery-container.dark-mode {
+  background: #ffffff; /* ⭐ Nền trắng hoàn toàn ⭐ */
+}
+
+/* ... (Các phần code khác giữ nguyên) ... */
+
+
+/* --- HEADER & TIÊU ĐỀ --- */
+.gallery-header {
+  text-align: center; /* Căn giữa nội dung header */
+  margin-bottom: 3rem; /* Khoảng cách dưới header */
+  animation: fadeIn 0.6s ease-out; /* Hiệu ứng fade in khi load */
+}
+
+.gallery-title {
+  font-size: 3rem; /* Cỡ chữ lớn */
+  font-weight: bold; /* Chữ đậm */
+  margin-bottom: 1rem; /* Khoảng cách dưới tiêu đề */
+  background: linear-gradient(135deg, hsl(186, 100%, 42%), hsl(200, 100%, 50%)); /* Gradient chữ xanh */
+  -webkit-background-clip: text; /* Clip nền chỉ trong chữ (Webkit) */
+  -webkit-text-fill-color: transparent; /* Chữ trong suốt để hiển thị gradient (Webkit) */
+  background-clip: text; /* Clip nền trong chữ chuẩn */
+}
+
+.gallery-description {
+  font-size: 1.125rem; /* Cỡ chữ mô tả vừa phải */
+  color: hsl(215.4, 16.3%, 46.9%); /* Màu xám tối */
+  max-width: 42rem; /* Chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa mô tả */
+}
+
+/* Dark mode: màu mô tả sáng hơn */
+.gallery-container.dark-mode .gallery-description {
+  color: hsl(215, 20.2%, 65.1%);
+}
+
+/* --- FILTER BUTTONS --- */
+.gallery-filters {
+  display: flex; /* Hiển thị theo flexbox */
+  justify-content: center; /* Căn giữa các nút */
+  gap: 0.75rem; /* Khoảng cách giữa các nút */
+  flex-wrap: wrap; /* Cho phép xuống dòng khi màn hình nhỏ */
+  margin-bottom: 3rem; /* Khoảng cách dưới bộ lọc */
+}
+
+/* Style mặc định cho từng nút filter */
+.filter-btn {
+  padding: 0.5rem 1.5rem; /* Padding trong nút */
+  border-radius: 0.75rem; /* Bo góc nút */
+  font-size: 0.875rem; /* Cỡ chữ nút nhỏ */
+  font-weight: 500; /* Chữ vừa đậm */
+  cursor: pointer; /* Con trỏ chuột là pointer */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng chuyển mượt */
+  
+  background: hsl(0, 0%, 100%); /* Nền trắng */
+  color: hsl(222.2, 47.4%, 11.2%); /* Chữ đen */
+  border: 1px solid hsl(214.3, 31.8%, 91.4%); /* Viền xám nhạt */
+}
+
+/* Hover effect cho nút filter */
+.filter-btn:hover {
+  background: hsl(186, 80%, 85%); /* Nền xanh nhạt khi hover */
+  color: hsl(186, 100%, 25%); /* Chữ xanh đậm khi hover */
+  transform: translateY(-2px); /* Nâng nút lên 2px */
+  box-shadow: 0 4px 20px -2px hsl(186, 100%, 42%, 0.15); /* Đổ bóng nhẹ */
+}
+
+/* Nút đang active (được chọn) */
+.filter-btn.active {
+  background: linear-gradient(135deg, hsl(186, 100%, 42%), hsl(200, 100%, 50%)); /* Gradient xanh */
+  color: hsl(0, 0%, 100%); /* Chữ trắng */
+  border-color: transparent; /* Xóa viền */
+}
+
+/* Dark mode cho nút filter */
+.gallery-container.dark-mode .filter-btn {
+  background: hsl(217.2, 32.6%, 17.5%); /* Nền tối */
+  color: hsl(210, 40%, 98%); /* Chữ sáng */
+  border-color: hsl(217.2, 32.6%, 17.5%); /* Viền nền tối */
+}
+
+.gallery-container.dark-mode .filter-btn:hover {
+  background: hsl(186, 80%, 30%); /* Nền xanh đậm khi hover */
+  color: hsl(186, 100%, 90%); /* Chữ sáng */
+}
+
+/* --- GALLERY GRID --- */
+.gallery-grid {
+  display: grid; /* Sử dụng grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Tự động chia cột */
+  gap: 1.5rem; /* Khoảng cách giữa các item */
+  max-width: 1200px; /* Chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa grid */
+  animation: fadeIn 0.6s ease-out 0.4s backwards; /* Fade in với delay */
+}
+
+/* Responsive nhỏ hơn 768px */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cột nhỏ hơn */
+    gap: 1rem; /* Khoảng cách nhỏ hơn */
+  }
+}
+
+/* --- GALLERY ITEM --- */
+.gallery-item {
+  position: relative; /* Quan trọng cho overlay */
+  border-radius: 0.75rem; /* Bo góc */
+  overflow: hidden; /* Cắt ảnh vượt ra ngoài */
+  aspect-ratio: 1; /* Tỷ lệ 1:1 (vuông) */
+  background: hsl(0, 0%, 100%); /* Nền trắng */
+  box-shadow: 0 4px 20px -2px hsl(186, 100%, 42%, 0.15); /* Đổ bóng nhẹ */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng mượt khi hover */
+  cursor: pointer; /* Con trỏ chuột là pointer */
+}
+
+/* Hover effect cho gallery item */
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.02); /* Nhấc lên + phóng to nhẹ */
+  box-shadow: 0 8px 30px -4px hsl(186, 100%, 42%, 0.25); /* Đổ bóng mạnh hơn */
+}
+
+/* Dark mode item */
+.gallery-container.dark-mode .gallery-item {
+  background: hsl(217.2, 32.6%, 17.5%);
+}
+
+/* Ảnh bên trong item */
+.gallery-image {
+  width: 100%; /* Chiều rộng 100% */
+  height: 100%; /* Chiều cao 100% */
+  object-fit: cover; /* Ảnh bao phủ toàn bộ item */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Hiệu ứng phóng to mượt */
+}
+
+/* Zoom ảnh khi hover item */
+.gallery-item:hover .gallery-image {
+  transform: scale(1.1);
+}
+
+/* --- OVERLAY --- */
+.gallery-overlay {
+  position: absolute; /* Overlay nằm trên item */
+  bottom: 0; /* Nằm dưới cùng */
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); /* Gradient từ đen xuống trong suốt */
+  padding: 1.5rem; /* Padding bên trong */
+
+  transform: translateY(100%); /* Ẩn overlay ban đầu */
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); /* Mượt khi hover */
+}
+
+/* Hiển thị overlay khi hover item */
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+/* Overlay title */
+.gallery-overlay-title {
+  font-size: 1.125rem; /* Cỡ chữ */
+  font-weight: 600; /* Chữ đậm vừa phải */
+  color: hsl(0,0%,100%); /* Chữ trắng */
+  margin-bottom: 0.25rem; /* Khoảng cách dưới */
+}
+
+/* Overlay category */
+.gallery-overlay-category {
+  font-size: 0.875rem; /* Cỡ chữ nhỏ */
+  color: hsl(186, 100%, 80%); /* Màu xanh nhạt */
+}
+
+/* --- NAV LINK "XEM THÊM" --- */
+.gallery-nav-link {
+  display: inline-block; /* Hiển thị inline nhưng có padding */
+  margin-top: 3rem; /* Khoảng cách trên */
+  padding: 0.75rem 2rem; /* Padding trong nút */
+  background: linear-gradient(135deg, hsl(186, 100%, 42%), hsl(200, 100%, 50%)); /* Nền gradient */
+  color: hsl(0,0%,100%); /* Chữ trắng */
+  border-radius: 0.75rem; /* Bo góc */
+  font-weight: 500; /* Chữ vừa đậm */
+  text-decoration: none; /* Không gạch chân */
+  transition: opacity 0.3s cubic-bezier(0.4,0,0.2,1); /* Hiệu ứng mượt */
+  animation: fadeIn 0.6s ease-out 0.6s backwards; /* Fade in với delay */
+}
+
+.gallery-nav-link:hover {
+  opacity: 0.9; /* Giảm opacity khi hover */
+}
+
+/* Căn giữa nội dung */
+.text-center {
+  text-align: center;
+}
+
+/* ==================================== */
+/* 2. ANIMATION & RESPONSIVE             */
+/* ==================================== */
+
+/* FadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Bắt đầu trong suốt */
+    transform: translateY(20px); /* Bắt đầu từ dưới */
+  }
+  to {
+    opacity: 1; /* Xuất hiện */
+    transform: translateY(0); /* Về vị trí ban đầu */
+  }
+}
+
+/* Responsive padding container */
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 2rem 1rem; /* Giảm padding trên màn hình nhỏ */
+  }
+}
+
+/* ==================================== */
+/* 3. DARK MODE CHUNG (prefers-color-scheme) */
+/* ==================================== */
+@media (prefers-color-scheme: dark) {
+  /* Áp dụng nếu không có class .light-mode */
+  .gallery-container:not(.light-mode) {
+    background: linear-gradient(180deg, hsl(222.2, 47.4%, 11.2%), hsl(217.2, 32.6%, 17.5%));
+  }
+  .gallery-container:not(.light-mode) .gallery-description {
+    color: hsl(215,20.2%,65.1%);
+  }
+  .gallery-container:not(.light-mode) .filter-btn {
+    background: hsl(217.2,32.6%,17.5%);
+    color: hsl(210,40%,98%);
+    border-color: hsl(217.2,32.6%,17.5%);
+  }
+  .gallery-container:not(.light-mode) .filter-btn:hover {
+    background: hsl(186,80%,30%);
+    color: hsl(186,100%,90%);
+  }
+  .gallery-container:not(.light-mode) .gallery-item {
+    background: hsl(217.2,32.6%,17.5%);
+  }
+}

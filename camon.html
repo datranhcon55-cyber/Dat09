@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Cảm Ơn</title>
+
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* CSS cơ bản cho trang cảm ơn và animation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        .thank-you-container {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #ffffff;
+            min-height: calc(100vh - 80px); 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 10px;
+        }
+        .thank-you-message {
+            opacity: 0; 
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        .thank-you-message h1 {
+            color: #2c3e50;
+            font-size: 2.8em;
+            margin-bottom: 0.4em;
+            animation: slideInUp 0.8s ease-out forwards;
+            animation-delay: 1s;
+        }
+        .thank-you-message p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 1.5em;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 1.5s;
+        }
+        .animated-icon {
+            width: 150px; 
+            height: 150px;
+            object-fit: contain; /* Giữ nguyên tỷ lệ ảnh */
+            margin-bottom: 30px;
+            animation: zoomIn 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+        .back-home-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-size: 1.1em;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 2s;
+            opacity: 0;
+        }
+        .back-home-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-text">ACADEMICS</div>
+                </div>
+
+                <nav>
+                    <a href="home.html">Home</a>
+                    <a href="#">Pages</a>
+                    <a href="#">Courses</a>
+                    <a href="#">Research</a>
+                    <a href="#">News</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <button class="apply-btn">APPLY NOW</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="thank-you-container">
+        <div class="container">
+            <div class="thank-you-message">
+                <img src="image/MEME.GIF" alt="Ảnh Mèo Cảm ơn" class="animated-icon"> 
+                <h1>Cảm ơn bạn!</h1>
+                <p>Chúng tôi đã nhận được tin nhắn của bạn và sẽ phản hồi sớm nhất có thể.</p>
+                <p>Xin vui lòng kiểm tra hộp thư email của bạn trong vòng 24 giờ tới.</p>
+                <a href="home.html" class="back-home-btn"> Quay lại Trang chủ </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

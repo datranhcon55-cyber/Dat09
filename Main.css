@@ -1,0 +1,371 @@
+/* ================= BODY & CHUNG ================= */
+
+/* Cấu hình font và nền mặc định cho trang */
+body {
+    font-family: Arial, sans-serif; /* Font chữ chính */
+    margin: 0; /* Xóa margin mặc định */
+    padding: 0; /* Xóa padding mặc định */
+    background-color: #ffffff; /* Nền trắng */
+    color: #2c3e50; /* Màu chữ mặc định */
+}
+
+/* ================= HERO SECTION ================= */
+
+/* Khối hero (ảnh banner chính) */
+.hero {
+    filter: brightness(100%); /* Độ sáng ảnh, 100% là bình thường */
+    position: relative; /* Để overlay và content có thể định vị */
+    height: 500px; /* Chiều cao cố định */
+    background-size: cover; /* Ảnh phủ toàn khối */
+    background-position: center; /* Canh giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp ảnh */
+    display: flex; /* Flex để xếp text và nút */
+    flex-direction: column; /* Xếp theo cột */
+    align-items: center; /* Căn giữa ngang */
+    justify-content: flex-start; /* Bắt đầu từ trên */
+    padding-top: 100px; /* Khoảng cách từ trên */
+}
+
+/* Overlay mờ trên hero */
+.hero::before {
+    content: ""; /* Nội dung rỗng */
+    position: absolute; /* Định vị tuyệt đối */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2); /* Màu trắng mờ */
+    z-index: 1; /* Nằm dưới content */
+}
+
+/* Nội dung hero (h1, p, nút) */
+.hero-content {
+    position: relative; /* Để z-index hoạt động */
+    z-index: 2; /* Nằm trên overlay */
+    text-align: center; /* Căn giữa chữ */
+    color: white; /* Chữ trắng */
+    max-width: 800px; /* Giới hạn chiều rộng */
+    padding: 20px 20px 40px 20px; /* Padding trong content */
+}
+
+/* Tiêu đề hero */
+.hero h1 {
+    font-size: 48px; /* Cỡ chữ lớn */
+    font-weight: bold; /* Chữ đậm */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+    letter-spacing: 3px; /* Khoảng cách chữ */
+}
+
+/* Mô tả hero */
+.hero p {
+    font-size: 18px; /* Cỡ chữ vừa */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+    line-height: 1.6; /* Chiều cao dòng */
+}
+
+/* Nút hero */
+.hero-btn {
+    background-color: #ffd700; /* Nền vàng */
+    color: #1b3764; /* Chữ xanh đậm */
+    padding: 15px 40px; /* Padding trong nút */
+    border-radius: 4px; /* Bo góc */
+    font-weight: bold; /* Chữ đậm */
+    letter-spacing: 2px; /* Khoảng cách chữ */
+    border: none; /* Không viền */
+    cursor: pointer; /* Con trỏ chuột */
+    font-size: 16px; /* Cỡ chữ */
+    position: relative; /* Để z-index */
+    z-index: 3; /* Nổi trên overlay */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Hiệu ứng hover */
+}
+
+/* Hover nút hero */
+.hero-btn:hover {
+    background-color: #ffed4e; /* Nền sáng hơn */
+    transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+/* ================= FEATURES SECTION ================= */
+
+/* Khối features (3-4 cột) */
+.features {
+    display: flex; /* Flex để xếp các feature-card */
+    gap: 0; /* Khoảng cách giữa các cột */
+    margin-top: -255px; /* Kéo lên trên */
+    position: relative;
+    z-index: 10; /* Nổi trên hero */
+    max-width: 1200px; /* Chiều rộng tối đa */
+    margin-left: auto; /* Căn giữa */
+    margin-right: auto; /* Căn giữa */
+    padding: 0 20px; /* Padding hai bên */
+    border: 6px solid #ffd700; /* Viền vàng bao quanh */
+    border-radius: 15px; /* Bo góc */
+    box-sizing: border-box; /* Tính padding + border trong width */
+}
+
+/* Card từng feature */
+.feature-card {
+    flex: 1; /* Chiếm đều các cột */
+    background-color: white; /* Nền trắng */
+    color: white; /* Màu chữ trắng (có thể thay đổi) */
+    padding: 40px 20px; /* Padding trong card */
+    text-align: center; /* Căn giữa chữ */
+    position: relative; /* Để pseudo-element ::after hoạt động */
+    background: linear-gradient(to bottom, white, green); /* Gradient nền card */
+}
+
+/* Đường ngang dưới card */
+.feature-card::after {
+    content: ""; /* Pseudo-element rỗng */
+    position: absolute;
+    bottom: 0; /* Đặt dưới cùng */
+    left: 0;
+    right: 0;
+    height: 4px; /* Độ dày */
+    background-color: rgba(173, 216, 230, 0.6); /* Màu mờ */
+}
+
+/* Icon trong card */
+.feature-icon {
+    width: 60px; /* Chiều rộng */
+    height: 60px; /* Chiều cao */
+    margin: 0 auto 20px; /* Căn giữa và khoảng cách dưới */
+    color: #ffd700; /* Màu vàng */
+}
+
+/* Tiêu đề card */
+.feature-card h3 {
+    font-size: 18px; /* Cỡ chữ */
+    margin-bottom: 15px; /* Khoảng cách dưới */
+    letter-spacing: 1px; /* Khoảng cách chữ */
+}
+
+/* Mô tả card */
+.feature-card p {
+    font-size: 14px; /* Cỡ chữ nhỏ */
+    line-height: 1.6; /* Chiều cao dòng */
+    opacity: 0.9; /* Mờ nhẹ */
+}
+
+/* Chia cột với border bên phải (trừ card cuối) */
+.feature-card:not(:last-child) {
+    border-right: 2px solid #ffd700;
+}
+
+/* Bo góc card đầu tiên */
+.feature-card:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/* Bo góc card cuối cùng */
+.feature-card:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* ================= COURSES SECTION ================= */
+
+/* Khối courses */
+.courses {
+    padding: 80px 20px; /* Padding trên/dưới và hai bên */
+    background-color: #f8f9fa; /* Nền sáng */
+}
+
+.courses .container {
+    max-width: 1200px; /* Giới hạn chiều rộng */
+    margin: 0 auto; /* Căn giữa */
+}
+
+/* Tiêu đề courses */
+.courses h2 {
+    text-align: center; /* Căn giữa chữ */
+    font-size: 36px; /* Cỡ chữ lớn */
+    color: #1b3764; /* Màu chữ */
+    margin-bottom: 50px; /* Khoảng cách dưới */
+    letter-spacing: 2px; /* Khoảng cách chữ */
+}
+
+/* Grid card courses */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cột linh hoạt */
+    gap: 30px; /* Khoảng cách giữa card */
+}
+
+/* Card course */
+.course-card {
+    background-color: white; /* Nền trắng */
+    border-radius: 8px; /* Bo góc */
+    overflow: hidden; /* Cắt tràn */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng hover */
+    position: relative; /* Để badge định vị */
+}
+
+/* Hover card */
+.course-card:hover {
+    transform: translateY(-10px); /* Nâng lên */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Shadow lớn hơn */
+}
+
+/* Ảnh course */
+.course-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Bao phủ container */
+}
+
+/* Badge khóa học */
+.course-badge {
+    position: absolute; /* Định vị trên card */
+    top: 15px;
+    right: 15px;
+    background-color: #dc3545; /* Màu đỏ */
+    color: white; /* Chữ trắng */
+    padding: 5px 15px; /* Padding */
+    border-radius: 4px; /* Bo góc */
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Badge khóa mới */
+.course-badge.new {
+    background-color: #ffd700; /* Vàng */
+    color: #1b3764; /* Chữ xanh đậm */
+}
+
+/* Nội dung course */
+.course-content {
+    padding: 25px; /* Padding trong card */
+}
+
+/* Tiêu đề course */
+.course-content h3 {
+    font-size: 20px;
+    color: #1b3764;
+    margin-bottom: 15px;
+}
+
+/* Mô tả course */
+.course-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+/* Nút course */
+.course-btn {
+    background-color: #1b3764; /* Nền xanh đậm */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover nút course */
+.course-btn:hover {
+    background-color: #2c5282; /* Xanh nhạt hơn */
+}
+
+/* ================= LECTURERS SECTION ================= */
+
+/* Khối lecturers */
+.lecturers {
+    padding: 80px 20px;
+    background-color: white;
+}
+
+.lecturers .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tiêu đề lecturers */
+.lecturers h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #1b3764;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+/* Grid lecturer */
+.lecturers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Card lecturer */
+.lecturer-card {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.lecturer-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ảnh lecturer */
+.lecturer-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Bo tròn */
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 4px solid #ffd700; /* Viền vàng */
+}
+
+/* Tiêu đề và mô tả lecturer */
+.lecturer-card h3 {
+    font-size: 20px;
+    color: #1b3764;
+    margin-bottom: 10px;
+}
+
+.lecturer-card p {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+/* Xếp hạng lecturer */
+.lecturer-rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Icon sao */
+.star {
+    width: 20px;
+    height: 20px;
+    color: #ffd700;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px; /* Giảm font hero trên mobile */
+    }
+    
+    .features {
+        flex-direction: column; /* Xếp card theo cột */
+        margin-top: 0; /* Bỏ margin âm */
+    }
+    
+    .courses h2,
+    .lecturers h2 {
+        font-size: 28px; /* Giảm tiêu đề */
+    }
+}

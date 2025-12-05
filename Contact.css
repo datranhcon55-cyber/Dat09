@@ -1,0 +1,294 @@
+/* Trang Liên Hệ (Contact Page Styles) */
+.contact-container {
+  /* Thiết lập chiều cao tối thiểu bằng 100% chiều cao của viewport (màn hình) */
+  min-height: 100vh;
+  /* Tạo nền gradient từ màu rất nhạt (xanh dương nhạt) đến màu xanh nhạt hơn */
+  background: linear-gradient(180deg, hsl(210, 40%, 98%), hsl(200, 60%, 95%));
+}
+
+.contact-wrapper {
+  /* Chiều rộng tối đa của nội dung trang, giới hạn không gian trên màn hình lớn */
+  max-width: 1280px;
+  /* Căn giữa wrapper trong container */
+  margin: 0 auto;
+  /* Khoảng đệm (padding) trên dưới 4rem, trái phải 1rem */
+  padding: 4rem 1rem;
+}
+
+/* --- Phong Cách Header (Header Styles) --- */
+.contact-header {
+  /* Căn chữ ra giữa */
+  text-align: center;
+  /* Khoảng cách dưới cùng */
+  margin-bottom: 4rem;
+  /* Áp dụng hiệu ứng động 'fadeIn' */
+  animation: fadeIn 0.6s ease-out;
+}
+
+.contact-title {
+  /* Cỡ chữ lớn */
+  font-size: 3rem;
+  /* Chữ in đậm */
+  font-weight: bold;
+  /* Khoảng cách dưới cùng */
+  margin-bottom: 1rem;
+  /* Tạo màu chữ bằng gradient (màu xanh ngọc đến xanh dương sáng) */
+  background: linear-gradient(135deg, hsl(186, 100%, 42%), hsl(200, 100%, 50%));
+  /* Cắt gradient theo hình dạng văn bản (dùng cho trình duyệt Webkit) */
+  -webkit-background-clip: text;
+  /* Đặt màu chữ là trong suốt (dùng cho trình duyệt Webkit) */
+  -webkit-text-fill-color: transparent;
+  /* Cắt gradient theo hình dạng văn bản (CSS tiêu chuẩn) */
+  background-clip: text;
+}
+
+.contact-subtitle {
+  /* Cỡ chữ phụ */
+  font-size: 1.25rem;
+  /* Màu xám tối */
+  color: hsl(215, 16.3%, 46.9%);
+  /* Chiều rộng tối đa cho phụ đề */
+  max-width: 42rem;
+  /* Căn giữa phụ đề */
+  margin: 0 auto;
+}
+
+/* --- Layout Dạng Lưới (Grid Layout) --- */
+.contact-grid {
+  /* Kích hoạt chế độ hiển thị lưới */
+  display: grid;
+  /* Trên màn hình nhỏ, chỉ có 1 cột */
+  grid-template-columns: 1fr;
+  /* Khoảng cách giữa các mục trong lưới */
+  gap: 3rem;
+  /* Chiều rộng tối đa của lưới */
+  max-width: 72rem;
+  /* Căn giữa lưới */
+  margin: 0 auto;
+}
+
+/* Media Query: Áp dụng khi chiều rộng màn hình từ 1024px trở lên (máy tính để bàn/lớn) */
+@media (min-width: 1024px) {
+  .contact-grid {
+    /* Chia thành 2 cột bằng nhau */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Phong Cách Thẻ (Card Styles) --- */
+.contact-card {
+  /* Nền màu trắng */
+  background: hsl(0, 0%, 100%);
+  /* Bo tròn góc */
+  border-radius: 1rem;
+  /* Khoảng đệm bên trong */
+  padding: 2rem;
+  /* Tạo đổ bóng (shadow) với màu xanh ngọc nhạt và độ mờ 15% */
+  box-shadow: 0 4px 20px -2px hsl(186, 100%, 42%, 0.15);
+  /* Hiệu ứng chuyển đổi mượt mà cho tất cả thuộc tính (hover) */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Áp dụng hiệu ứng động 'fadeIn' */
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Hiệu ứng khi di chuột qua thẻ */
+.contact-card:hover {
+  /* Tăng đổ bóng, làm nổi bật thẻ */
+  box-shadow: 0 8px 30px -4px hsl(186, 100%, 42%, 0.25);
+}
+
+.contact-card.delayed {
+  /* Trì hoãn thời gian bắt đầu hiệu ứng động để tạo hiệu ứng staggered */
+  animation-delay: 0.2s;
+}
+
+.card-title {
+  /* Cỡ chữ tiêu đề trong thẻ */
+  font-size: 1.5rem;
+  /* Độ đậm của chữ */
+  font-weight: 600;
+  /* Khoảng cách dưới cùng */
+  margin-bottom: 1.5rem;
+  /* Màu chữ đen đậm */
+  color: hsl(222, 47.4%, 11.2%);
+}
+
+/* --- Phong Cách Form (Form Styles) --- */
+.contact-form {
+  /* Bố cục flex, xếp các phần tử theo chiều dọc */
+  display: flex;
+  flex-direction: column;
+  /* Khoảng cách giữa các phần tử trong form */
+  gap: 1.5rem;
+}
+
+.form-group {
+  /* Bố cục flex, xếp label và input theo chiều dọc */
+  display: flex;
+  flex-direction: column;
+  /* Khoảng cách giữa label và input */
+  gap: 0.5rem;
+}
+
+.form-label {
+  /* Cỡ chữ nhỏ */
+  font-size: 0.875rem;
+  /* Độ đậm của chữ */
+  font-weight: 500;
+  /* Màu chữ đen đậm */
+  color: hsl(222, 47.4%, 11.2%);
+}
+
+.form-input,
+.form-textarea {
+  /* Chiều rộng đầy đủ */
+  width: 100%;
+  /* Khoảng đệm bên trong */
+  padding: 0.625rem 0.75rem;
+  /* Viền màu xám nhạt */
+  border: 1px solid hsl(214.3, 31.8%, 91.4%);
+  /* Bo tròn góc */
+  border-radius: 0.375rem;
+  /* Cỡ chữ nhỏ */
+  font-size: 0.875rem;
+  /* Nền trắng */
+  background: hsl(0, 0%, 100%);
+  /* Màu chữ đen đậm */
+  color: hsl(222, 47.4%, 11.2%);
+  /* Hiệu ứng chuyển đổi mượt mà cho các thuộc tính */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Trạng thái khi focus (nhấp chuột vào) */
+.form-input:focus,
+.form-textarea:focus {
+  /* Xóa viền mặc định của trình duyệt */
+  outline: none;
+  /* Thay đổi màu viền thành màu xanh ngọc */
+  border-color: hsl(186, 100%, 42%);
+  /* Tạo đổ bóng nhẹ */
+  box-shadow: 0 4px 20px -2px hsl(186, 100%, 42%, 0.15);
+  /* Tạo viền nhẫn (ring) xung quanh input */
+  ring: 2px solid hsl(186, 100%, 42%);
+}
+
+.form-textarea {
+  /* Chiều cao tối thiểu */
+  min-height: 150px;
+  /* Ngăn không cho người dùng thay đổi kích thước bằng chuột */
+  resize: none;
+}
+
+.form-error {
+  /* Màu đỏ cho thông báo lỗi */
+  color: hsl(0, 84.2%, 60.2%);
+  /* Cỡ chữ nhỏ */
+  font-size: 0.875rem;
+  /* Khoảng cách trên cùng */
+  margin-top: 0.25rem;
+}
+
+/* --- Phong Cách Nút (Button Styles) --- */
+.submit-button {
+  /* Chiều rộng đầy đủ */
+  width: 100%;
+  /* Khoảng đệm */
+  padding: 0.75rem 1.5rem;
+  /* Nền gradient (màu xanh ngọc đến xanh dương sáng) */
+  background: linear-gradient(135deg, hsl(186, 100%, 42%), hsl(200, 100%, 50%));
+  /* Màu chữ trắng */
+  color: white;
+  /* Xóa viền */
+  border: none;
+  /* Bo tròn góc */
+  border-radius: 0.375rem;
+  /* Cỡ chữ */
+  font-size: 1rem;
+  /* Độ đậm của chữ */
+  font-weight: 500;
+  /* Thay đổi con trỏ chuột thành dạng bàn tay */
+  cursor: pointer;
+  /* Hiệu ứng chuyển đổi độ mờ */
+  transition: opacity 0.3s ease;
+}
+
+/* Hiệu ứng khi di chuột qua nút */
+.submit-button:hover {
+  /* Giảm nhẹ độ mờ */
+  opacity: 0.9;
+}
+
+/* --- Hiệu Ứng Động (Animation) --- */
+/* Định nghĩa hiệu ứng động 'fadeIn' */
+@keyframes fadeIn {
+  from {
+    /* Bắt đầu với độ mờ bằng 0 */
+    opacity: 0;
+    /* Dịch chuyển lên 12px */
+    transform: translateY(12px);
+  }
+  to {
+    /* Kết thúc với độ mờ bằng 1 (hoàn toàn rõ) */
+    opacity: 1;
+    /* Trở về vị trí ban đầu */
+    transform: translateY(0);
+  }
+}
+/* Styling cho nút Submit */
+.submit-button {
+  /* Bạn cần thêm các thuộc tính cơ bản của nút ở đây nếu nó chưa được định nghĩa trước đó */
+  /* Ví dụ: display, padding, border, background-color, v.v. */
+  transition: opacity 0.3s ease; /* Hiệu ứng chuyển đổi cho độ mờ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Khoảng cách giữa các phần tử con */
+}
+
+/* Hiệu ứng khi di chuột qua nút Submit (khi không bị vô hiệu hóa) */
+.submit-button:hover:not(:disabled) {
+  opacity: 0.9; /* Giảm nhẹ độ mờ */
+}
+
+/* Styling khi nút Submit bị vô hiệu hóa */
+.submit-button:disabled {
+  opacity: 0.6; /* Giảm độ mờ mạnh hơn */
+  cursor: not-allowed; /* Thay đổi con trỏ chuột */
+}
+
+/* --- Contact Info Styles --- */
+
+/* Container chính của thông tin liên hệ */
+.contact-info {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  gap: 2rem; /* Khoảng cách lớn giữa các nhóm thông tin */
+}
+
+/* Danh sách/nhóm các mục thông tin */
+.info-list {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các mục theo chiều dọc */
+  gap: 1.5rem; /* Khoảng cách giữa các mục thông tin */
+}
+
+/* Mỗi mục thông tin (icon + text) */
+.info-item {
+  display: flex;
+  align-items: flex-start; /* Căn chỉnh icon và text lên đầu */
+  gap: 1rem; /* Khoảng cách giữa icon và nội dung */
+}
+
+/* Icon trong mục thông tin */
+.info-icon {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: hsl(186, 80%, 85%, 0.5); /* Màu nền với độ trong suốt */
+  transition: background 0.3s ease; /* Hiệu ứng chuyển đổi cho màu nền */
+  flex-shrink: 0; /* Ngăn icon bị co lại */
+}
+
+/* Thay đổi màu nền của icon khi di chuột qua mục thông tin cha */
+.info-item:hover .info-icon {
+  background: hsl(186, 80%, 85%); /* Màu nền đặc hơn khi hover */
+}

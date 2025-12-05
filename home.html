@@ -1,0 +1,204 @@
+<!DOCTYPE html> <!-- Khai báo tiêu chuẩn HTML5 -->
+<html lang="vi"> <!-- Website sử dụng ngôn ngữ tiếng Việt -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Hỗ trợ tiếng Việt, Unicode -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hiển thị tốt trên mobile -->
+    <title>Academics - Home</title> <!-- Tên trang hiển thị trên tab -->
+
+    <!-- Nhúng các file CSS -->
+    <link rel="stylesheet" href="header.css"> <!-- CSS cho header -->
+    <link rel="stylesheet" href="main.css"> <!-- CSS cho nội dung chính -->
+    <link rel="stylesheet" href="Gallery.css"> <!-- CSS cho gallery -->
+    <link rel="stylesheet" href="Contact.css"> <!-- CSS cho contact -->
+</head>
+
+<body> <!-- Bắt đầu phần nội dung hiển thị -->
+
+    <!-- ================= HEADER ================ -->
+    <header> <!-- Phần đầu trang -->
+        <div class="container"> <!-- Căn giữa nội dung theo chiều ngang -->
+            <div class="header-content"> <!-- Khối bao toàn bộ phần header -->
+
+                <!-- LOGO -->
+                <div class="logo"> <!-- Khối chứa logo -->
+                    <div class="logo-icon"> <!-- Icon logo dạng SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 2H9a2 2 0 0 0-2 2v14a4 4 0 0 1 4 4h10V4a2 2 0 0 0-2-2zm-8 18a2 2 0 0 0-2-2V4h10v16H11zM5 6H3v14a2 2 0 0 0 2 2h6v-2H5V6z"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">ACADEMICS</div> <!-- Chữ logo -->
+                </div>
+
+                <!-- MENU ĐIỀU HƯỚNG -->
+                <nav> <!-- Thanh menu -->
+                    <a href="home.html">Home</a> <!-- Link về trang chủ -->
+                    <a href="#">Pages</a>
+                    <a href="#">Courses</a>
+                    <a href="#">Research</a>
+                    <a href="#">News</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <!-- NÚT APPLY NOW -->
+                <button class="apply-btn">APPLY NOW</button> <!-- Nút nổi bật -->
+            </div>
+        </div>
+    </header>
+
+    <!-- ================ HERO (BANNER) ================ -->
+    <section class="hero" style="background-image: url('image/lacay.jpg');"> <!-- Banner lớn có nền bằng ảnh -->
+        <div class="hero-content"> <!-- Khối chứa chữ trong banner -->
+            <h1>Best Education Into PHP</h1> <!-- Tiêu đề lớn -->
+            <p>
+                Enjoy quality teaching with outstanding lecturers  
+                and a modern educational environment.
+            </p>
+            <button class="hero-btn">START A COURSE</button> <!-- Nút CTA -->
+        </div>
+    </section>
+
+    <!-- ================ FEATURES (3 Ô TÍNH NĂNG) ================ -->
+    <section class="features"> <!-- Phần hiển thị 3 tính năng -->
+        
+        <!-- Ô tính năng 1 -->
+        <div class="feature-card"> <!-- Card đặc trưng -->
+            <div class="feature-icon">📘</div> <!-- Icon -->
+            <h3>Scholarship Facility</h3> <!-- Tiêu đề -->
+            <p>Enjoy diverse study programs with scholarship support.</p> <!-- Mô tả -->
+        </div>
+
+        <!-- Ô tính năng 2 -->
+        <div class="feature-card">
+            <div class="feature-icon">👨‍🏫</div>
+            <h3>Skilled Lecturers</h3>
+            <p>Professional and passionate lecturers from top universities.</p>
+        </div>
+
+        <!-- Ô tính năng 3 -->
+        <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>Book Library & Store</h3>
+            <p>Thousands of books and digital documents available.</p>
+        </div>
+
+    </section>
+
+    <!-- ================ COURSES (KHÓA HỌC) ================ -->
+    <section class="courses"> <!-- Phần khóa học -->
+        <div class="container"> <!-- Căn giữa -->
+            <h2>Our Main Courses</h2> <!-- Tiêu đề -->
+
+            <div class="courses-grid"> <!-- Lưới chứa các khóa học -->
+
+                <!-- Khóa học 1 -->
+                <div class="course-card"> <!-- Thẻ khóa học -->
+                    <img src="image/khoahocdientu.jpg" class="course-image"> <!-- Ảnh khóa học -->
+                    <div class="course-badge">NEW</div> <!-- Nhãn NEW -->
+                    <div class="course-content"> <!-- Nội dung -->
+                        <h3>Electrical Engineering</h3>
+                        <p>Explore the fundamentals and advanced principles.</p>
+                        <a href="#" class="course-btn">APPLY NOW</a>
+                    </div>
+                </div>
+
+                <!-- Khóa học 2 -->
+                <div class="course-card">
+                    <img src="image/khoahoccntt.jpg" class="course-image">
+                    <div class="course-content">
+                        <h3>Computer Engineering</h3>
+                        <p>Modern computing technology and programming.</p>
+                        <a href="#" class="course-btn">APPLY NOW</a>
+                    </div>
+                </div>
+
+                <!-- Khóa học 3 -->
+                <div class="course-card">
+                    <img src="image/khoahocluanly.jpg" class="course-image">
+                    <div class="course-content">
+                        <h3>Law</h3>
+                        <p>Legal theory combined with practical case studies.</p>
+                        <a href="#" class="course-btn">APPLY NOW</a>
+                    </div>
+                </div>
+
+                <!-- Khóa học 4 -->
+                <div class="course-card">
+                    <img src="image/khoahocvannghe.jpg" class="course-image">
+                    <div class="course-content">
+                        <h3>Master of Arts</h3>
+                        <p>Deep study in humanities and modern culture.</p>
+                        <a href="#" class="course-btn">APPLY NOW</a>
+                    </div>
+                </div>
+
+                <!-- Khóa học 5 -->
+                <div class="course-card">
+                    <img src="image/khoahocclkd.jpg" class="course-image">
+                    <div class="course-content">
+                        <h3>Business Strategy</h3>
+                        <p>Learn real-world business management skills.</p>
+                        <a href="#" class="course-btn">APPLY NOW</a>
+                    </div>
+                </div>
+
+                <!-- Khóa học 6 -->
+                <div class="course-card">
+                    <img src="image/khoahoccokhi.jpg" class="course-image">
+                    <div class="course-content">
+                        <h3>Mechanical Engineering</h3>
+                        <p>In-depth study of mechanical systems.</p>
+                        <a href="#" class="course-btn">APPLY NOW</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================ LECTURERS (GIẢNG VIÊN) ================ -->
+    <section class="lecturers">
+        <div class="container">
+            <h2>Our Skilled Lecturers</h2> <!-- Tiêu đề -->
+
+            <div class="lecturers-grid"> <!-- Lưới giảng viên -->
+
+                <!-- Giảng viên 1 -->
+                <div class="lecturer-card">
+                    <img src="image/R.jpg" class="lecturer-image"> <!-- Ảnh -->
+                    <h3>Rosy Janner</h3> <!-- Tên -->
+                    <p>Senior Lecturer</p> <!-- Chức danh -->
+                    <div class="lecturer-rating">⭐⭐⭐⭐⭐</div> <!-- Đánh giá -->
+                </div>
+
+                <!-- Giảng viên 2 -->
+                <div class="lecturer-card">
+                    <img src="image/M.jpg" class="lecturer-image">
+                    <h3>Mike Hussy</h3>
+                    <p>Senior Analyst</p>
+                    <div class="lecturer-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <!-- Giảng viên 3 -->
+                <div class="lecturer-card">
+                    <img src="image/D.jpg" class="lecturer-image">
+                    <h3>Dazly Millar</h3>
+                    <p>Finance Lecturer</p>
+                    <div class="lecturer-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+                <!-- Giảng viên 4 -->
+                <div class="lecturer-card">
+                    <img src="image/K.jpg" class="lecturer-image">
+                    <h3>Kazi Fahim</h3>
+                    <p>Tech Instructor</p>
+                    <div class="lecturer-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
